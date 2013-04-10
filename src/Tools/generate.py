@@ -39,14 +39,14 @@ def generate(filename,path):
     Module.path = path
     Module.module = GenerateModelInst.Module[0]
     Module.Generate()
-    print "Done generating: " + GenerateModelInst.Module[0].Name
+    print ("Done generating: " + GenerateModelInst.Module[0].Name)
   else:
     Export = generateTemplates.templateClassPyExport.TemplateClassPyExport()
     Export.path = path+"/"
     Export.dirname = os.path.dirname(filename)+"/";
     Export.export = GenerateModelInst.PythonExport[0]
     Export.Generate()
-    print "Done generating: " + GenerateModelInst.PythonExport[0].Name
+    print ("Done generating: " + GenerateModelInst.PythonExport[0].Name)
     
   
   
@@ -86,7 +86,7 @@ def main():
 			filename = os.path.abspath(i)
 			if(defaultPath == ""):
 				head,tail = os.path.split(filename)
-				print head,tail
+				print (head,tail)
 				generate(filename,head)
 			else:
 				generate(filename,defaultPath)
